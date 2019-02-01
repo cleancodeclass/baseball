@@ -5,8 +5,18 @@
 ## Baseball Game 실습 소개
 
 ### Baseball Game 규칙
-* 세자리 숫자를 맞추는 야구게임
-  * 세자리 수를 입력받아 결과를 리턴한다.
+* 0~9까지의 숫자 중 임의의 다른 세 자리의 숫자를 불러서, 상대방이 맞추는 게임이다.
+  * 사용되는 숫자는 0~9까지의 서로 다른 숫자이다.
+  * 숫자는 맞지만 위치가 틀렸을 경우에는 Ball
+  * 숫자와 위치가 모두 맞으면 Strike
+* Example : question이 "123"일 경우
+  * guess(“123”) -> solved=true, strikes=3, balls=0
+  * guess(“456”) -> solved=false, strikes=0, balls=0
+  * guess(“129”) -> solved=false, strikes=2, balls=0
+  * guess(“240”) -> solved=false, strikes=0, balls=1
+  * guess(“321”) -> solved=false, strikes=1, balls=2  
+
+## Baseball Game 구현
 * 답에 대한 return은 아래 속성을 가지는 객체로 한다. 
   * boolean solved
   * int strikes
@@ -16,12 +26,17 @@
   * 자리수가 세 자리가 아닐 경우
   * 숫자 외의 문자가 입력될 경우
   * 중복된 숫자가 입력될 경우
-* Example : question이 "123"일 경우
-  * guess(“123”) -> solved=true, strikes=3, balls=0
-  * guess(“456”) -> solved=false, strikes=0, balls=0
-  * guess(“129”) -> solved=false, strikes=2, balls=0
-  * guess(“240”) -> solved=false, strikes=0, balls=1
-  * guess(“321”) -> solved=false, strikes=1, balls=2
+ * 테스트 케이스 예시
+  * 입력값이 없을 경우
+  * 입력값 자리수가 세자리가 아닐 경우 ("12", "1234")
+  * 입력값에 숫자 외의 문자가 입력될 경우 ("A12")
+  * 입력값에 중복된 숫자가 입력될 경우 ("112")
+  * 숫자 세개가 전부 일치 할 경우 (question : "123", guess : "123")
+  * 숫자 세개가 전부 일치 하지 않을 경우 (question : "123", guess : "456")
+  * 스트라이크만 있을 경우 (question : "123", guess : "178")
+  * 볼만 있을 경우 (question : "123", guess : "561")
+  * 볼과 스트라이크가 함께 있을 경우 (question : "123", guess : "136")
+
 
 
 ## 실습방법
