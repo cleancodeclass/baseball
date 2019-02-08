@@ -58,3 +58,18 @@
 #### 핑퐁
 * 한명은 실패하는 테스트 케이스를 작성하고, 나머지 한명은 테스트를 구현하기 위한 성공코드를 작성한다.
 
+
+
+## 참고 API
+#### String class
+* https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+
+###### public int length()
+* https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--
+
+###### public char charAt(int index)
+* https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#charAt-int-
+
+###### public int indexOf(int ch)
+* https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#indexOf-int-
+
