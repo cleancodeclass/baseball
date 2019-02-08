@@ -50,6 +50,14 @@
 5. 새로운 실패하는 테스트 케이스를 만든다
 6. 1~5 반복을 통해 구체화되는 테스트케이스를 이용하여 일반화되는 소스코드를 작성한다.
 
+
+## Eclipse 환경설정
+#### Hamcrest 설정
+ * Windows -> Preperence 메뉴
+ * Java -> Editor -> Content Assist -> Favorites 항목
+ * "org.junit.Assert",  "org.hamcrest.CoreMatchers" 
+
+
 ## Pair Programming
 #### 드라이버/네이게이터
 * 드라이버 - 소스코드를 타이핑 한다.
