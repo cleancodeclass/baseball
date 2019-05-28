@@ -1,53 +1,72 @@
 package baseball;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 public class GameTest {
 
-	@Test
-	public void ÀÔ·Â°ªÀÌ_¾øÀ»_°æ¿ì() {
+	@Test(expected = IllegalArgumentException.class)
+	public void ì…ë ¥ê°’ì´_ì—†ì„_ê²½ìš°() {
+		// given
+		Game game = new Game();
+		
+		// when
+		game.guess(null);
+		
+		// then
+		
 
 	}
 	
 	@Test
-	public void ÀÔ·Â°ª_ÀÚ¸®¼ö°¡_¼¼ÀÚ¸®°¡_¾Æ´Ò_°æ¿ì() {
+	public void ì…ë ¥ê°’_ìë¦¬ìˆ˜ê°€_ì„¸ìë¦¬ê°€_ì•„ë‹_ê²½ìš°() {
 
 	}
 	
 	@Test
-	public void ÀÔ·Â°ª¿¡_¼ıÀÚ_¿ÜÀÇ_¹®ÀÚ°¡_ÀÔ·ÂµÉ_°æ¿ì() {
+	public void ì…ë ¥ê°’ì—_ìˆ«ì_ì™¸ì˜_ë¬¸ìê°€_ì…ë ¥ë _ê²½ìš°() {
 
 	}
 	
 	@Test
-	public void ÀÔ·Â°ª¿¡_Áßº¹µÈ_¼ıÀÚ°¡_ÀÔ·ÂµÉ_°æ¿ì() {
+	public void ì…ë ¥ê°’ì—_ì¤‘ë³µëœ_ìˆ«ìê°€_ì…ë ¥ë _ê²½ìš°() {
 
 	}
 	
 	@Test
-	public void ¼ıÀÚ_¼¼°³°¡_ÀüºÎ_ÀÏÄ¡_ÇÒ_°æ¿ì_3_strike() {
+	public void ìˆ«ì_ì„¸ê°œê°€_ì „ë¶€_ì¼ì¹˜_í• _ê²½ìš°_3_strike() {
+		// given
+		Game game = new Game();
+		
+		// when
+		game.question = "123";
+		GuessResult result = game.guess("123");
+		
+		// then
+		assertThat(result.solved, is(true));
+		assertThat(result.strike, is(3));
+		assertThat(result.ball, is(0));
+	}
+	
+	@Test
+	public void ìˆ«ì_ì„¸ê°œê°€_ì „ë¶€_ì¼ì¹˜_í•˜ì§€_ì•Šì„_ê²½ìš°_0_strike_0_ball() {
 
 	}
 	
 	@Test
-	public void ¼ıÀÚ_¼¼°³°¡_ÀüºÎ_ÀÏÄ¡_ÇÏÁö_¾ÊÀ»_°æ¿ì_0_strike_0_ball() {
+	public void ìŠ¤íŠ¸ë¼ì´í¬ë§Œ_ìˆì„_ê²½ìš°_1_strike_0_ball() {
 
 	}
 	
 	@Test
-	public void ½ºÆ®¶óÀÌÅ©¸¸_ÀÖÀ»_°æ¿ì_1_strike_0_ball() {
+	public void ë³¼ë§Œ_ìˆì„_ê²½ìš°_0_strike_1_ball() {
 
 	}
 	
 	@Test
-	public void º¼¸¸_ÀÖÀ»_°æ¿ì_0_strike_1_ball() {
-
-	}
-	
-	@Test
-	public void º¼°ú_½ºÆ®¶óÀÌÅ©°¡_ÇÔ²²_ÀÖÀ»_°æ¿ì_1_strike_1_ball() {
+	public void ë³¼ê³¼_ìŠ¤íŠ¸ë¼ì´í¬ê°€_í•¨ê»˜_ìˆì„_ê²½ìš°_1_strike_1_ball() {
 
 	}
 }
