@@ -53,7 +53,11 @@ public class GameTest {
 	
 	@Test
 	public void 숫자_세개가_전부_일치_하지_않을_경우_0_strike_0_ball() {
-
+		game.question="123";
+		GuessResult result = game.guess("456");
+		assertEquals(false, result.solved);
+		assertEquals(0, result.Strikes);
+		assertEquals(0, result.balls);
 	}
 	
 	@Test
