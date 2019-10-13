@@ -2,7 +2,9 @@ package baseball;
 
 public class Game {
 
-	public void guess(String guess) {
+	public String question;
+
+	public GuessResult guess(String guess) {
 		if(guess==null || guess.isEmpty()) {
 			throw new IllegalArgumentException();
 		}
@@ -19,6 +21,7 @@ public class Game {
 				|| guess.charAt(1)==guess.charAt(2)) {
 			throw new IllegalArgumentException();
 		}
+		return null;
 	}
 
 }

@@ -1,5 +1,6 @@
 package baseball;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
@@ -43,7 +44,11 @@ public class GameTest {
 	
 	@Test
 	public void 숫자_세개가_전부_일치_할_경우_3_strike() {
-
+		game.question="123";
+		GuessResult result = game.guess("123");
+		assertEquals(true, result.solved);
+		assertEquals(3, result.Strikes);
+		assertEquals(0, result.balls);
 	}
 	
 	@Test
