@@ -1,18 +1,24 @@
 package baseball;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class GameTest {
 
+	private Game game;
+
+	@Before
+	public void setup() {
+		game = new Game();
+	}
+	
 	@Test(expected=IllegalArgumentException.class)
 	public void 입력값이_없을_경우() {
-		Game game = new Game();
 		game.guess(null);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
 	public void 입력값_자리수가_세자리가_아닐_경우() {
-		Game game = new Game();
 		game.guess("12");
 	}
 	
