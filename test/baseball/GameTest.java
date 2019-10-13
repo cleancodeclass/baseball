@@ -1,7 +1,5 @@
 package baseball;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class GameTest {
@@ -12,9 +10,10 @@ public class GameTest {
 		game.guess(null);
 	}
 	
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void 입력값_자리수가_세자리가_아닐_경우() {
-
+		Game game = new Game();
+		game.guess("12");
 	}
 	
 	@Test
