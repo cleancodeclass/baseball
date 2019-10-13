@@ -6,6 +6,9 @@ public class Game {
 		if(guess==null || guess.isEmpty()) {
 			throw new IllegalArgumentException();
 		}
+		if(guess.length() != 3) {
+			throw new IllegalArgumentException();
+		}
 	}
 
 }
