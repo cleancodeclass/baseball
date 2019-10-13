@@ -13,6 +13,7 @@ public class GameTest {
 	@Before
 	public void setup() {
 		game = new Game();
+		game.question="123";
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
@@ -44,8 +45,8 @@ public class GameTest {
 	
 	@Test
 	public void 숫자_세개가_전부_일치_할_경우_3_strike() {
-		game.question="123";
 		GuessResult result = game.guess("123");
+		
 		assertEquals(true, result.solved);
 		assertEquals(3, result.Strikes);
 		assertEquals(0, result.balls);
@@ -53,8 +54,8 @@ public class GameTest {
 	
 	@Test
 	public void 숫자_세개가_전부_일치_하지_않을_경우_0_strike_0_ball() {
-		game.question="123";
 		GuessResult result = game.guess("456");
+		
 		assertEquals(false, result.solved);
 		assertEquals(0, result.Strikes);
 		assertEquals(0, result.balls);
