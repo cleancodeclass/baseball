@@ -6,9 +6,10 @@ import org.junit.Test;
 
 public class GameTest {
 
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void 입력값이_없을_경우() {
-
+		Game game = new Game();
+		game.guess(null);
 	}
 	
 	@Test
