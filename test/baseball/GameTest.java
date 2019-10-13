@@ -81,6 +81,10 @@ public class GameTest {
 	
 	@Test
 	public void 볼과_스트라이크가_함께_있을_경우_1_strike_1_ball() {
-
+		GuessResult result = game.guess("152");
+		
+		assertEquals(false, result.solved);
+		assertEquals(1, result.Strikes);
+		assertEquals(1, result.balls);
 	}
 }
