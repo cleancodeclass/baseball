@@ -21,7 +21,12 @@ public class Game {
 				|| guess.charAt(1)==guess.charAt(2)) {
 			throw new IllegalArgumentException();
 		}
-		return null;
+		
+		if(guess.equalsIgnoreCase(question)) {
+			return new GuessResult(true, 3, 0);
+		}else {
+			return null;
+		}
 	}
 
 }
