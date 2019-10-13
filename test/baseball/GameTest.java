@@ -27,9 +27,9 @@ public class GameTest {
 		game.guess("12d");
 	}
 	
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void 입력값에_중복된_숫자가_입력될_경우() {
-
+		game.guess("112");
 	}
 	
 	@Test
