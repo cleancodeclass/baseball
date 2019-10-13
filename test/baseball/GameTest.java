@@ -22,9 +22,9 @@ public class GameTest {
 		game.guess("12");
 	}
 	
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void 입력값에_숫자_외의_문자가_입력될_경우() {
-
+		game.guess("12d");
 	}
 	
 	@Test
