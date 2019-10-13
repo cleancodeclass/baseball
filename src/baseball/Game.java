@@ -27,9 +27,7 @@ public class Game {
 		}else {
 			int strikes = 0;
 			for(int index=0; index < question.length(); index++) {
-				char charAt = guess.charAt(index);
-				int indexOf = question.indexOf(charAt);
-				if(indexOf == index) {
+				if(question.indexOf(guess.charAt(index)) == index) {
 					strikes++;
 				}
 			}
