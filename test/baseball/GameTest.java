@@ -72,7 +72,11 @@ public class GameTest {
 	
 	@Test
 	public void 볼만_있을_경우_0_strike_1_ball() {
-
+		GuessResult result = game.guess("416");
+		
+		assertEquals(false, result.solved);
+		assertEquals(0, result.Strikes);
+		assertEquals(1, result.balls);
 	}
 	
 	@Test
