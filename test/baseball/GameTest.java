@@ -63,7 +63,11 @@ public class GameTest {
 	
 	@Test
 	public void 스트라이크만_있을_경우_1_strike_0_ball() {
-
+		GuessResult result = game.guess("156");
+		
+		assertEquals(false, result.solved);
+		assertEquals(1, result.Strikes);
+		assertEquals(0, result.balls);
 	}
 	
 	@Test
