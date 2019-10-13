@@ -14,6 +14,11 @@ public class Game {
 				throw new IllegalArgumentException();
 			}
 		}
+		if(guess.charAt(0)==guess.charAt(1)
+				|| guess.charAt(0)==guess.charAt(2)
+				|| guess.charAt(1)==guess.charAt(2)) {
+			throw new IllegalArgumentException();
+		}
 	}
 
 }
