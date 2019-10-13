@@ -1,5 +1,7 @@
 package baseball;
 
+import static org.junit.Assert.fail;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,9 +29,16 @@ public class GameTest {
 		game.guess("12d");
 	}
 	
-	@Test(expected=IllegalArgumentException.class)
+	@Test
 	public void 입력값에_중복된_숫자가_입력될_경우() {
-		game.guess("112");
+		try {
+			game.guess("112");
+			game.guess("111");
+			game.guess("122");
+			fail();
+		}catch(IllegalArgumentException e) {
+			
+		}
 	}
 	
 	@Test
