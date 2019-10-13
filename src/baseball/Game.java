@@ -9,6 +9,11 @@ public class Game {
 		if(guess.length() != 3) {
 			throw new IllegalArgumentException();
 		}
+		for(char number : guess.toCharArray()) {
+			if(number < '0' || number > '9') {
+				throw new IllegalArgumentException();
+			}
+		}
 	}
 
 }
