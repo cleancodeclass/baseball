@@ -26,12 +26,15 @@ public class Game {
 			return new GuessResult(true, 3, 0);
 		}else {
 			int strikes = 0;
+			int balls = 0;
 			for(int index=0; index < question.length(); index++) {
 				if(question.indexOf(guess.charAt(index)) == index) {
 					strikes++;
+				}else if(question.indexOf(guess.charAt(index)) > -1) {
+					balls++;
 				}
 			}
-			return new GuessResult(false, strikes, 0);
+			return new GuessResult(false, strikes, balls);
 		}
 	}
 
